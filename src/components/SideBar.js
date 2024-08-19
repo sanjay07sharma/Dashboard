@@ -1,6 +1,7 @@
 import React from "react";
 import {
   AUTOMATION_ICON_IMG,
+  DASHBOARD_ICON_IMG,
   DOCUMENTATION_ICON_IMG,
   HOME_ICON_IMG,
   INTEGRATIONS_ICON_IMG,
@@ -54,10 +55,10 @@ const SideBar = () => {
   }];
 
   return (
-    <div className="rounded-lg shadow-lg h-screen bg-blue-900 text-white fixed w-96">
-      <div className="flex">
-        <img src="../images/speedometer.png" alt="img" />
-        <h1 className="text-2xl p-4">Tracker</h1>
+    <div className="shadow-md h-screen bg-blue-900 text-white fixed w-96">
+      <div className="flex border-b-2 border-black">
+        <img src={DASHBOARD_ICON_IMG} alt="DashboardIcon" className="h-8 w-8 mt-2 ml-2"/>
+        <h1 className="text-2xl p-2">Tracker</h1>
       </div>
       <div className="">
         <ul>

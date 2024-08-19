@@ -12,7 +12,7 @@ const Body = () => {
                 showSideBar && <SideBar/>
             }
             <Header showSideBar={showSideBar} setShowSideBar={setShowSideBar}/>
-            <ShowCharts />    
+            <ShowCharts />
         </div>
     )
 }

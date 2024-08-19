@@ -31,3 +31,5 @@ export const REQUESTS_ICON_IMG = "https://img.icons8.com/?size=100&id=sFxaIWtsEd
 export const DOCUMENTATION_ICON_IMG = "https://img.icons8.com/?size=100&id=85875&format=png&color=000000";
 
 export const LOGGED_USERS_ICON_IMG = "https://img.icons8.com/?size=100&id=zxB19VPoVLjK&format=png&color=000000";
+
+export const DASHBOARD_ICON_IMG = "https://cdn-icons-png.flaticon.com/512/427/427111.png";

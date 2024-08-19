@@ -1,7 +1,7 @@
 import { Doughnut } from 'react-chartjs-2';
 
 const data = {
-  labels: ['Critical', 'High', 'Medium', 'Low'],
+  labels: [],
   datasets: [
     {
       data: [333, 3000, 7000, 6000],
@@ -13,7 +13,7 @@ const data = {
 
 export default function DonutChartComponent() {
   return(
-    <div style={{ width: '400px', height: '400px' }}>
+    <div>
         <Doughnut data={data} />
     </div>
     );
