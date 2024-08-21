@@ -340,29 +340,6 @@
               </ScatterChart>
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-            <div className="bg-white p-4 rounded-md shadow-md">
-              <div className="flex justify-between items-center mb-2">
-                <h2 className="text-xl font-bold">Vulnerability Summary</h2>
-                <div className="flex items-center">
-                  <select className="border border-gray-300 px-2 py-1 rounded">
-                    <option value="All Time">All Time</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-            <div className="bg-white p-4 rounded-md shadow-md">
-              <div className="flex justify-between items-center mb-2">
-                <h2 className="text-xl font-bold">WOE by Severity</h2>
-                <div className="flex items-center">
-                  <select className="border border-gray-300 px-2 py-1 rounded">
-                    <option value="By Severity">By Severity</option>
-                    <option value="WOE Top Ten">WOE Top Ten</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     );
