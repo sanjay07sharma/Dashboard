@@ -161,3 +161,103 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ### Documentation
 
 For more detailed configuration and advanced features, refer to the [Chart.js documentation](https://www.chartjs.org/docs/latest/).
+
+
+---
+
+## Recharts.js Setup and Usage
+
+### Installation
+
+1. **Using npm:**
+
+   ```bash
+   npm install recharts
+   ```
+
+2. **Using yarn:**
+
+   ```bash
+   yarn add recharts
+   ```
+
+### Basic Setup
+
+1. **React Component Setup:**
+
+   First, ensure you have React and ReactDOM installed in your project.
+
+2. **Create a Chart Component:**
+
+   Import the necessary components from Recharts and create a chart component. For example, here's how to set up a basic bar chart:
+
+   ```javascript
+   // Import necessary components from Recharts
+   import React from 'react';
+   import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
+
+   // Sample data for the chart
+   const data = [
+     { name: 'January', uv: 4000, pv: 2400, amt: 2400 },
+     { name: 'February', uv: 3000, pv: 1398, amt: 2210 },
+     { name: 'March', uv: 2000, pv: 9800, amt: 2290 },
+     { name: 'April', uv: 2780, pv: 3908, amt: 2000 },
+     { name: 'May', uv: 1890, pv: 4800, amt: 2181 },
+     { name: 'June', uv: 2390, pv: 3800, amt: 2500 },
+     { name: 'July', uv: 3490, pv: 4300, amt: 2100 },
+   ];
+
+   // Define the chart component
+   const SimpleBarChart = () => (
+     <BarChart
+       width={600}
+       height={300}
+       data={data}
+       margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+     >
+       <CartesianGrid strokeDasharray="3 3" />
+       <XAxis dataKey="name" />
+       <YAxis />
+       <Tooltip />
+       <Legend />
+       <Bar dataKey="uv" fill="#8884d8" />
+       <Bar dataKey="pv" fill="#82ca9d" />
+     </BarChart>
+   );
+
+   export default SimpleBarChart;
+   ```
+
+3. **Using the Chart Component:**
+
+   In your main component or App file, import and use the `SimpleBarChart` component:
+
+   ```javascript
+   import React from 'react';
+   import ReactDOM from 'react-dom';
+   import SimpleBarChart from './SimpleBarChart'; // Adjust the path as needed
+
+   const App = () => (
+     <div>
+       <h1>My Recharts Example</h1>
+       <SimpleBarChart />
+     </div>
+   );
+
+   ReactDOM.render(<App />, document.getElementById('root'));
+   ```
+
+### Customization
+
+- **Change Chart Type:**
+  Use different components like `LineChart`, `PieChart`, `AreaChart`, etc., based on your needs.
+
+- **Update Data:**
+  Modify the `data` array to reflect the data you want to visualize.
+
+- **Customize Appearance:**
+  Adjust properties of `Bar`, `Line`, `Pie`, and other chart components to customize colors, labels, tooltips, and more.
+
+### Documentation
+
+For further customization and advanced usage, refer to the [Recharts documentation](https://recharts.org/en-US/).
