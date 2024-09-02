@@ -68,3 +68,96 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Chart.js Setup and Usage
+
+### Installation
+
+1. **Using npm:**
+
+   ```bash
+   npm install chart.js
+   ```
+
+2. **Using CDN:**
+
+   Add the following script tag to your HTML:
+
+   ```html
+   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+   ```
+
+### Basic Setup
+
+1. **HTML Structure:**
+
+   Create a `<canvas>` element in your HTML where the chart will be rendered:
+
+   ```html
+   <canvas id="myChart" width="400" height="200"></canvas>
+   ```
+
+2. **JavaScript Initialization:**
+
+   Initialize Chart.js by adding the following JavaScript code:
+
+   ```javascript
+   // Import Chart.js if using modules
+   // import Chart from 'chart.js';
+
+   // Get the context of the canvas element we want to use
+   var ctx = document.getElementById('myChart').getContext('2d');
+
+   // Create a new Chart instance
+   var myChart = new Chart(ctx, {
+       type: 'bar', // Specify the type of chart (e.g., 'bar', 'line', 'pie')
+       data: {
+           labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+           datasets: [{
+               label: '# of Votes',
+               data: [12, 19, 3, 5, 2, 3, 7],
+               backgroundColor: [
+                   'rgba(255, 99, 132, 0.2)',
+                   'rgba(54, 162, 235, 0.2)',
+                   'rgba(255, 206, 86, 0.2)',
+                   'rgba(75, 192, 192, 0.2)',
+                   'rgba(153, 102, 255, 0.2)',
+                   'rgba(255, 159, 64, 0.2)',
+                   'rgba(255, 99, 132, 0.2)'
+               ],
+               borderColor: [
+                   'rgba(255, 99, 132, 1)',
+                   'rgba(54, 162, 235, 1)',
+                   'rgba(255, 206, 86, 1)',
+                   'rgba(75, 192, 192, 1)',
+                   'rgba(153, 102, 255, 1)',
+                   'rgba(255, 159, 64, 1)',
+                   'rgba(255, 99, 132, 1)'
+               ],
+               borderWidth: 1
+           }]
+       },
+       options: {
+           scales: {
+               y: {
+                   beginAtZero: true
+               }
+           }
+       }
+   });
+   ```
+
+### Customization
+
+- **Change Chart Type:**
+  Modify the `type` property in the `Chart` constructor (e.g., 'line', 'pie').
+
+- **Update Data:**
+  Change the `data` property within the `datasets` array.
+
+- **Modify Appearance:**
+  Customize colors, borders, and other visual aspects in the `datasets` object and `options` property.
+
+### Documentation
+
+For more detailed configuration and advanced features, refer to the [Chart.js documentation](https://www.chartjs.org/docs/latest/).
