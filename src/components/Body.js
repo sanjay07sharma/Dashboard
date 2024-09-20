@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Header from './Header'
 import SideBar from './SideBar'
 import ShowCharts from './ShowCharts';
+import DonutChartComponent from './DoughnutChart';
 
 const Body = () => {
     const [showSideBar, setShowSideBar] = useState(true);
