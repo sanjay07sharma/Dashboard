@@ -1,39 +1,50 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { FILTER_IMG, HAMBURGER_IMG, THREE_DOTS_IMG } from "../utils/constants";
 
-const Header = (props) => {
+const Header = ({ showSideBar, setShowSideBar }) => {
   const handleHamburgerClick = () => {
-    props.setShowSideBar(!props.showSideBar);
-    document.querySelector('.header').classList.toggle('ml-0');
-    document.querySelector(".SelectContainer").classList.toggle("ml-[104rem]");
+    setShowSideBar(!showSideBar);
   };
 
   return (
-    <div className="flex p-4 h-16 md:shadow-lg w-screen bg-white">
-      <div className="header ml-96 h-4 flex">
-        <img
-          src={HAMBURGER_IMG}
-          alt="hambugerImg"
-          className="h-8 w-8"
+    <div className="sticky top-0 z-20 flex items-center h-16 w-full bg-white shadow-md px-4">
+      <div className={`flex items-center transition-all duration-300 ${showSideBar ? 'ml-4' : 'ml-0'}`}>
+        <button 
           onClick={handleHamburgerClick}
-        />
-        <h2 className="text-xl">Dashboard</h2>
+          className="p-2 rounded-md hover:bg-gray-100 focus:outline-none"
+        >
+          <img
+            src={HAMBURGER_IMG}
+            alt="Toggle Menu"
+            className="h-6 w-6"
+          />
+        </button>
+        <h2 className="text-xl font-semibold ml-3">Dashboard</h2>
       </div>
-      <div className="SelectContainer flex ml-[80rem]">
-        <select className="DropDown bg-white shadow-md text-black border border-gray-300 px-2 font-bold rounded-lg w-44">
+      
+      <div className="flex items-center ml-auto">
+        <select className="bg-white text-gray-800 border border-gray-300 rounded-lg px-3 py-2 mr-3 focus:outline-none focus:ring-2 focus:ring-purple-500">
           <option>Option 1</option>
           <option>Option 2</option>
           <option>Option 3</option>
         </select>
-        <button className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-1 px-2 rounded-lg col-span-1 ml-2 flex w-44 space-between">
-          <p>Show FIlters</p>
+        
+        <button className="bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-4 rounded-lg flex items-center mr-3 transition-colors duration-200">
+          <span>Show Filters</span>
           <img
             src={FILTER_IMG}
-            alt="FilterIMG"
-            className="h-4 w-4 mt-2 ml-2 invert"
+            alt="Filter"
+            className="h-4 w-4 ml-2 invert"
           />
         </button>
-        <img src={THREE_DOTS_IMG} alt="hambugerImg" className="" />
+        
+        <button className="p-2 rounded-md hover:bg-gray-100 focus:outline-none">
+          <img 
+            src={THREE_DOTS_IMG} 
+            alt="More Options" 
+            className="h-6 w-6" 
+          />
+        </button>
       </div>
     </div>
   );

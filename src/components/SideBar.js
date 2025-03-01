@@ -1,98 +1,49 @@
-import React from "react";
-import {
-  AUTOMATION_ICON_IMG,
-  DASHBOARD_ICON_IMG,
-  DOCUMENTATION_ICON_IMG,
-  HOME_ICON_IMG,
-  INTEGRATIONS_ICON_IMG,
-  LOGGED_USERS_ICON_IMG,
-  LOGS_ICON_IMG,
-  PROJECTS_ICON_IMG,
-  REQUESTS_ICON_IMG,
-  SBOM_ICON_IMG,
-  SCANS_ICON_IMG,
-  USERS_ICON_IMG,
-  VULNERABILITIES_ICON_IMG,
-} from "../utils/constants";
+import React from 'react';
 
 const SideBar = () => {
-  <span class="ml-2 font-medium">Logs</span>;
-  /*
-    <span class="ml-2 font-medium">Dashboard</span>
-    <span class="ml-2 font-medium">Projects & Products</span>
-    <span class="ml-2 font-medium">Scans</span>
-    <span class="ml-2 font-medium">Vulnerabilities</span>
-    <span class="ml-2 font-medium">SBOM</span>
-    <span class="ml-2 font-medium">Users & Teams</span>
-    <span class="ml-2 font-medium">Automation</span>
-    <span class="ml-2 font-medium">Integrations</span>
-    <span class="ml-2 font-medium">Logs</span>
-    <span class="ml-2 font-medium">Suppression Requests</span>
-    <span class="ml-2 font-medium">Documentation</span>
-    <span class="ml-2 font-medium">suphi</span>
-    */
-  const dashboardItemList = [
-    { name: "Dashboard", icon: HOME_ICON_IMG },
-    { name: "Projects & Products", icon: PROJECTS_ICON_IMG },
-    { name: "Scans", icon: SCANS_ICON_IMG },
-    { name: "Vulnerabilities", icon: VULNERABILITIES_ICON_IMG },
-    { name: "SBOM", icon: SBOM_ICON_IMG },
-    { name: "Users & Teams", icon: USERS_ICON_IMG },
-    { name: "Automation", icon: AUTOMATION_ICON_IMG },
-    { name: "Integrations", icon: INTEGRATIONS_ICON_IMG },
-    { name: "Logs", icon: LOGS_ICON_IMG },
+  const menuItems = [
+    { name: 'Dashboard', icon: '📊' },
+    { name: 'Projects', icon: '📁' },
+    { name: 'Vulnerabilities', icon: '🛡️' },
+    { name: 'Risk Analysis', icon: '📈' },
+    { name: 'Reports', icon: '📝' },
+    { name: 'Settings', icon: '⚙️' },
   ];
-  
-  const dashboardFooterItemList = [{
-    name: "Suppression Requests",
-    icon: REQUESTS_ICON_IMG,
-  }, {
-    name: "Documentation",
-    icon: DOCUMENTATION_ICON_IMG,
-  }, {
-    name: "UserName",
-    icon: LOGGED_USERS_ICON_IMG,
-  }];
 
   return (
-    <div className="shadow-md h-screen bg-blue-900 text-white fixed w-96">
-      <div className="flex border-b-2 border-black">
-        <img src={DASHBOARD_ICON_IMG} alt="DashboardIcon" className="h-8 w-8 mt-2 ml-2"/>
-        <h1 className="text-2xl p-2">Tracker</h1>
+    <div className="w-64 h-full bg-white shadow-lg">
+      <div className="p-4 border-b">
+        <h2 className="text-xl font-bold text-gray-800">Security Dashboard</h2>
       </div>
-      <div className="">
+      
+      <nav className="mt-4">
         <ul>
-          {dashboardItemList.map((item, index) => {
-            return (
-              <li className="m-2 p-2 mb-4" key={index}>
-                <button className="w-full h-10 text-left pl-4 flex hover:border border-gray-500 hover:rounded-lg">
-                  <img
-                    src={item.icon}
-                    alt="homeIcon"
-                    className="h-6 w-6 mt-1 invert"
-                  />
-                  <p className="ml-4 mt-1">{item.name}</p>
-                </button>
-              </li>
-            );
-          })}
+          {menuItems.map((item, index) => (
+            <li key={index}>
+              <a
+                href="#"
+                className={`flex items-center px-4 py-3 text-gray-700 hover:bg-purple-50 hover:text-purple-700 transition-colors ${
+                  item.name === 'Dashboard' ? 'bg-purple-50 text-purple-700 border-r-4 border-purple-500' : ''
+                }`}
+              >
+                <span className="mr-3">{item.icon}</span>
+                <span>{item.name}</span>
+              </a>
+            </li>
+          ))}
         </ul>
-      </div>
-      <div className="mt-[40%] border border-t-black border-b-blue-900">
-        <ul>
-            {
-                dashboardFooterItemList.map((item, index) => {
-                    return (
-                        <li className="m-2 p-2 mb-4" key={index}>
-                            <button className="w-full h-14 text-left pl-4 flex hover:border border-gray-500 hover:rounded-lg">
-                                <img src={item.icon} alt="homeIcon" className="h-6 w-6 mt-4 invert"/>
-                                <p className="ml-4 mt-4">{item.name}</p>
-                            </button>
-                        </li>
-                    )
-                })
-            }
-        </ul>
+      </nav>
+      
+      <div className="absolute bottom-0 w-full p-4 border-t">
+        <div className="flex items-center">
+          <div className="w-10 h-10 rounded-full bg-gray-300 flex items-center justify-center">
+            <span>👤</span>
+          </div>
+          <div className="ml-3">
+            <p className="font-medium text-gray-800">User Name</p>
+            <p className="text-sm text-gray-500">Security Admin</p>
+          </div>
+        </div>
       </div>
     </div>
   );

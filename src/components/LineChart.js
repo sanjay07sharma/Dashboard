@@ -19,9 +19,11 @@ const LineChartComponent = () => {
   };
 
   return (
-    <div style={{ width: '400px', height: '400px' }}>
-      <h2>Line Chart Example</h2>
-      <Line data={data} />
+    <div style={{ width: '400px', height: '400px' }} className='text-xl font-bold'>
+      <h2>Line Chart</h2>
+      <div className="w-full h-full align-middle">
+        <Line data={data}/>
+      </div>
     </div>
   );
 };
